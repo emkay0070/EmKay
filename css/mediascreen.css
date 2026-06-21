@@ -70,8 +70,8 @@
   }
 
   .about-more {
-    flex-direction: row;
-    justify-content: space-between !important;
+    flex-direction: column;
+    gap: 20px;
   }
 
   /* SKILLS */
