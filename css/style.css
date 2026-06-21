@@ -91,3 +91,88 @@ img{
     text-align: center;
 }
 
+/* Splash Loader */
+#splash-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #050505; /* Deep dark for premium feel */
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+}
+
+.splash-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.splash-brand {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 0px;
+    background: linear-gradient(90deg, #fff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.splash-tagline {
+    font-size: 1.2rem;
+    color: orange;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.splash-sub {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: slideUpFade 1s ease-out 0.5s forwards;
+}
+
+.splash-progress {
+    width: 150px;
+    height: 2px;
+    background: #222;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 1s forwards;
+}
+
+.splash-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: orange;
+    animation: progressLoad 1.5s ease-in-out 1s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes progressLoad {
+    0% { width: 0%; }
+    50% { width: 70%; }
+    100% { width: 100%; }
+}

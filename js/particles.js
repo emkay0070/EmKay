@@ -1,4 +1,4 @@
-// Hero Particles — lightweight canvas animation
+// Hero Particles — constellation network effect
 (function () {
   const canvas = document.getElementById("hero-particles");
   if (!canvas) return;
@@ -7,9 +7,11 @@
   let width, height;
   let particles = [];
   let animId;
-  const PARTICLE_COUNT = 60;
+  let mouse = { x: -9999, y: -9999 };
+  const PARTICLE_COUNT = 80;
+  const CONNECTION_DIST = 100;
+  const MOUSE_DIST = 150;
 
-  // Detect theme
   function isDark() {
     return document.body.classList.contains("dark");
   }
@@ -24,10 +26,10 @@
     return {
       x: Math.random() * width,
       y: Math.random() * height,
-      radius: Math.random() * 2.5 + 0.5,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
-      opacity: Math.random() * 0.5 + 0.15,
+      radius: Math.random() * 1.2 + 0.4,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      opacity: Math.random() * 0.4 + 0.1,
     };
   }
 
@@ -43,29 +45,44 @@
     ctx.clearRect(0, 0, width, height);
 
     const dark = isDark();
-    const baseColor = dark ? "255, 255, 255" : "0, 0, 0";
-    const lineColor = dark
-      ? "rgba(255, 165, 0, 0.06)"
-      : "rgba(255, 165, 0, 0.08)";
+    const dotR = dark ? 255 : 80;
+    const dotG = dark ? 255 : 80;
+    const dotB = dark ? 255 : 80;
+    const lineR = dark ? 255 : 180;
+    const lineG = dark ? 165 : 140;
+    const lineB = dark ? 0 : 60;
 
-    // Update and draw particles
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
+
+      // Gentle mouse repulsion
+      const mdx = p.x - mouse.x;
+      const mdy = p.y - mouse.y;
+      const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
+      if (mDist < MOUSE_DIST && mDist > 0) {
+        const force = (MOUSE_DIST - mDist) / MOUSE_DIST * 0.015;
+        p.vx += (mdx / mDist) * force;
+        p.vy += (mdy / mDist) * force;
+      }
+
+      // Dampen velocity
+      p.vx *= 0.998;
+      p.vy *= 0.998;
 
       // Move
       p.x += p.vx;
       p.y += p.vy;
 
-      // Wrap around edges
-      if (p.x < 0) p.x = width;
-      if (p.x > width) p.x = 0;
-      if (p.y < 0) p.y = height;
-      if (p.y > height) p.y = 0;
+      // Wrap
+      if (p.x < -10) p.x = width + 10;
+      if (p.x > width + 10) p.x = -10;
+      if (p.y < -10) p.y = height + 10;
+      if (p.y > height + 10) p.y = -10;
 
       // Draw dot
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${baseColor}, ${p.opacity})`;
+      ctx.fillStyle = `rgba(${dotR}, ${dotG}, ${dotB}, ${p.opacity})`;
       ctx.fill();
 
       // Draw connections
@@ -75,12 +92,13 @@
         const dy = p.y - q.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < 120) {
+        if (dist < CONNECTION_DIST) {
+          const alpha = (1 - dist / CONNECTION_DIST) * 0.12;
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(q.x, q.y);
-          ctx.strokeStyle = lineColor;
-          ctx.lineWidth = 0.5;
+          ctx.strokeStyle = `rgba(${lineR}, ${lineG}, ${lineB}, ${alpha})`;
+          ctx.lineWidth = 0.4;
           ctx.stroke();
         }
       }
@@ -89,7 +107,19 @@
     animId = requestAnimationFrame(draw);
   }
 
-  // Pause when not visible to save resources
+  // Mouse tracking
+  canvas.parentElement.addEventListener("mousemove", (e) => {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+
+  canvas.parentElement.addEventListener("mouseleave", () => {
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
+  // Pause when not visible
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -106,7 +136,5 @@
   init();
   observer.observe(canvas.parentElement);
 
-  window.addEventListener("resize", () => {
-    resize();
-  });
+  window.addEventListener("resize", resize);
 })();
