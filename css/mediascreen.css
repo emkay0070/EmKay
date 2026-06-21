@@ -1,0 +1,448 @@
+@media (max-width: 768px) {
+
+
+    body{
+      width: 100%;
+      overflow-x: hidden !important;
+  }
+  /* GLOBAL PADDING FIX */
+  .hero,
+  .About,
+  .skills,
+  .services,
+  .portifolio,
+  .Testimonials,
+  .contact-wrapper,
+  .me {
+    padding-inline: 2rem;
+  }
+
+  /* HERO */
+  .hero {
+    width: 100%;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    gap: 30px;
+    text-align: center;
+
+    .hero-cont{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  }
+
+  .hero-img {
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0;
+  }
+
+  .hero-social {
+    width: 80%;
+    flex-direction: row !important;
+    gap: 15px;
+    box-shadow: none !important;
+    background: transparent !important;
+    display: none !important;
+  }
+
+  /* ABOUT */
+  .About{
+    width: 100%;
+    height: fit-content !important;
+    padding: 4rem 0rem !important;
+    margin-top: 40px !important;
+    overflow-x: hidden !important;
+  }
+  .about-body {
+    flex-direction: column;
+    padding: 2rem !important;
+  }
+
+  .about-body-img {
+    width: 100% !important;
+    height: 400px !important;
+  }
+
+  .about-more {
+    flex-direction: row;
+    justify-content: space-between !important;
+  }
+
+  /* SKILLS */
+  .skills {
+    height: auto;
+    overflow-x: hidden !important;
+
+    .skills-top{
+      text-align: center;
+    }
+  }
+
+
+
+  /* SERVICES */
+  .services {
+    height: auto;
+  }
+
+  .service-cards {
+    gap: 50px !important;
+    flex-direction: column;
+    transform: none;
+  }
+
+  .service-card {
+    transform: none !important;
+    transition: none !important;
+    min-width: 80% !important;
+    min-height: 340px;
+
+    will-change: transform !important;
+  }
+
+  .featured {
+        transform: none !important;
+        transition: none !important;
+        border: none !important;
+  }
+
+  .service-card h2,
+  .service-card p {
+      transform: translateZ(0) !important;
+      backface-visibility: hidden !important;
+      color: black;
+  }
+    
+  .process-timeline{
+     /* flex-direction: column; */
+
+     .process-step{
+        /* width: 100%; */
+        border: 1px solid #494949;
+        border-radius: 4px;
+        padding: 12px;
+     }
+  }
+
+  /* PORTFOLIO */
+  .portifolio{
+      height: fit-content;
+      padding: rem 0rem;
+
+      .portifolio-top{
+          text-align: center;
+      }
+  }
+  .slides {
+    flex-direction: column;
+    height: auto;
+    background: none !important;
+    /* padding: 2rem !important; */
+  }
+
+  .slide,
+  .slide.active {
+    width: 100% !important;
+    height: fit-content;
+    transform: none;
+  }
+
+  .slides:hover .slide {
+    width: 100%;
+  }
+
+  /* ME SECTION */
+ 
+  .me-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 32px 24px !important;
+  }
+
+  .me-cotent {
+    justify-content: center;
+    align-items: center;
+    padding: 0 !important;
+  }
+
+  .me-img {
+    width: 100%;
+    height: 220px;
+    display: none !important;
+  }
+
+  /* TESTIMONIALS */
+  .Testimonials {
+    height: fit-content;
+    padding: 4rem 2rem;
+
+    .test-top{
+      text-align: center !important;
+    }
+  }
+
+  .testimonial {
+    flex-direction: column;
+  }
+
+  /* CONTACT */
+  .contact-wrapper {
+    padding-inline: 2rem;
+    height: auto;
+
+  }
+
+  .contact {
+    flex-direction: column;
+  }
+
+  .left {
+    width: 100%;
+    border-right: none;
+  }
+
+  form {
+    width: 100%;
+    height: fit-content !important;
+    
+    .icky{
+        display: none !important;
+    }
+  }
+
+  form .names {
+    flex-direction: column;
+  }
+
+  form .names .p01,
+  form .names .p02 {
+    position: static;
+  }
+
+  .call-me > div{
+     display: flex;
+     flex-wrap: wrap;
+  }
+
+
+  /* .floating-pricing-btn{ */
+  .floating-pricing-btn{
+      padding: 8px;
+      padding-left: 14px;
+      bottom: 100px;
+      right: -220px;
+
+      span:nth-child(1){
+          position: absolute;
+          left: -3000px ;
+      }
+
+      span:nth-child(2){
+          display: block;
+      }
+  }
+}
+
+
+/* =============== 480px =============== */
+@media (max-width: 480px) {
+
+  body{
+    overflow-x: hidden !important;
+  }
+
+  h1 { font-size: 1.8rem !important; }
+  h2 { font-size: 1.2rem !important; }
+  p  { font-size: 0.95rem !important; }
+
+  .hero-cont button {
+    width: 100%;
+  }
+
+    .about-more{
+        flex-wrap: wrap;
+
+        & > div{
+            display: flex;
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            gap: 20px;
+            padding: 24px;
+
+            .icky{
+                font-size: 32px !important;
+                background: transparent !important;
+                color: #fafffa !important;
+                margin-bottom: 0px !important;
+            }
+
+            h2{
+                font-size: 32px !important;
+            }
+        }
+
+        & div:nth-child(1) .icky{
+            color: black !important;
+        }
+    }
+
+  .services {
+    padding-inline: 2rem !important;
+
+    h2{
+        font-size: 1.2rem !important;
+        margin-bottom: 14px;
+    }
+  }
+
+  .service-card {
+    width: 100% !important;
+    height: auto;
+    margin-bottom: 14px;
+    transform: none !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    backface-visibility: hidden;
+    transition: none !important;
+
+    h2{
+        font-size: 1.2rem !important;
+    }
+  }
+
+  .service-card.featured{
+      height: fit-content !important;
+  }
+
+  /* .up.circular {
+    width: 36px;
+    height: 36px;
+  } */
+
+  .hero{
+      overflow: hidden;
+  }
+
+  .portifolio{
+    h2{
+        margin-bottom: 14px;
+    }
+    .slide{
+
+      .stack-used{
+        display: none;
+      }
+
+      font-size: 0.85rem !important;
+
+      p{
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          overflow: hidden;
+          text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .me{
+      .me-container{
+        h2{
+            margin-bottom: 14px;
+        }
+
+        .cta-btns {
+            width: 100% !important;
+            align-items: center;
+            justify-content: center;
+        }
+      }
+  }
+
+  .Testimonials{
+      h2{
+          margin-bottom: 14px;
+      }
+  }
+
+
+  .skill-items{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+  }
+
+}
+
+
+@media (max-width: 380px) {
+
+    .hero-cont{
+        text-align: center;
+    }
+
+  .hero-social a {
+    font-size: 1.2rem;
+  }
+
+  .about-more{
+    flex-direction: column;
+  }
+
+  .skills{
+    overflow: hidden;
+  }
+
+  .services {
+    padding-inline: 2rem !important;
+
+    .service-card{
+        width: 100% !important;
+    }
+
+    .process-timeline{
+        width: 100%;
+        display: flex;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 5px;
+
+
+
+     .process-step{
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 12px;
+        flex-direction: row !important;
+        justify-content: space-between;
+
+        i{
+            font-size: 24px !important;
+        }
+ 
+      }
+    }
+  }
+
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+

@@ -1,0 +1,24 @@
+# robots.txt for EmKay Portfolio
+
+# Applies to all search engines
+User-agent: *
+
+# Disallow system and backend folders (adjust if you have others)
+Disallow: /cgi-bin/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /node_modules/
+Disallow: /vendor/
+Disallow: /js/old/
+Disallow: /css/old/
+
+# Block hidden files
+Disallow: /*.env
+Disallow: /*.bak
+Disallow: /*.log
+
+# Allow the rest (main portfolio content, images, CSS, JS)
+Allow: /
+
+# Sitemap location
+Sitemap: https://emkay.wuaze.com/sitemap.xml

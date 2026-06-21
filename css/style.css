@@ -1,0 +1,93 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../fonts/Poppins-Regular.woff2);
+    font-display: swap;
+}
+@font-face {
+    font-family: "Orbitron";
+    src: url(../fonts/Web-PS\ Orbitron.woff2);
+    font-display: swap;
+}
+@font-face {
+    font-family: "space";
+    src: url(../fonts/SpaceGrotesk-Regular.otf);
+    font-display: swap;
+}
+
+body{
+    width: 100%;
+    height: 100dvh;
+    background: hsl(0 0 100%);
+    color: #2c2c2ce1;
+    font-family: "Poppins",sans-serif;
+    font-size: 15px;
+    transition: background 0.8s ease-in-out, background-image 0.8s ease-in-out, color 0.8s ease-in-out;
+}
+
+
+:root{
+    /* --background:  rgb(130, 60, 201); */
+    --background:  #ffa500;
+    --box-shadow: 0px 3px 6px #3333331d;
+    --shad: 4px 6px 12px #ddd;
+    --shad-2: 4px 6px 12px #0000002c;
+    --dck-acc: #555555; 
+}
+
+/* defaults */
+.btn{
+    width: 120px;
+    padding: 6px;
+    border: none;
+    background: var(--background);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn a{
+    text-decoration: none;
+    font-size: large;
+    font-weight: 500;
+    color: #fff;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* defaults end */
+
+
+/* classes */
+.ctr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fl{
+    display: flex;
+}
+
+.fl-c{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.skills-top{
+    text-align: center;
+}
+

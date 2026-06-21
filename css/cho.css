@@ -1,0 +1,231 @@
+
+  /* --- Section Styling --- */
+  #why-choose-me {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f7f7f7;
+  }
+  #why-choose-me h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  /* --- Flex container for cards --- */
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* --- Individual Card --- */
+  .card {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    border-radius: 20px;
+    padding: 35px 25px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    flex: 1 1 250px; /* flex-grow, flex-shrink, flex-basis */
+    max-width: 350px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+
+  /* --- Icon Styling --- */
+  .card-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+  }
+  .card:hover .card-icon {
+    transform: scale(1.2);
+  }
+
+  /* Icon Colors */
+  .icon-design { color: #ff6b6b; }
+  .icon-speed { color: #f7b32b; }
+  .icon-price { color: #3ecf8e; }
+  .icon-communication { color: #4dabf7; }
+  .icon-support { color: #9b59b6; }
+  .icon-business { color: #ff9f1c; }
+
+  /* --- Card Title --- */
+  .card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  /* --- Card Text --- */
+  .card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+  }
+
+  /* --- CTA Button --- */
+  .cta-btn {
+    width: 220px;
+    margin: 1px auto;
+    margin-top: 50px;
+    padding: 8px;
+    padding-left: 14px;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: orange;
+    color: #fff;
+    border-radius: 24px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    .icky{
+        display: flex;
+        background: #fff;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        font-size: 16px;
+        align-items: center;
+        justify-content: center;
+
+        color: orangered;
+    }
+  }
+  .cta-btn:hover {
+    background-color:  orangered;
+    transform: translateY(-3px);
+  }
+
+  /* --- Fade-in Animation --- */
+  .fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 900px) {
+    .card {
+      flex: 1 1 45%;
+    }
+  }
+  @media (max-width: 600px) {
+    #why-choose-me h2 {
+      font-size: 2rem;
+    }
+    .card {
+      flex: 1 1 100%;
+      padding: 25px 15px;
+    }
+  }
+
+
+
+
+
+
+  .skills {
+  padding: 4rem;
+  background-image: url(../img/tst_bck-02.jpg);
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  /* background: linear-gradient(90deg, #ff8a00, #e52e71); */
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+
+.section-subtitle {
+  color: #aaa;
+  margin-bottom: 60px;
+}
+
+.sk-f{
+    gap: 20px;
+}
+
+.skills-flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid #ddd;
+  box-shadow: var(--shad);
+  transition: 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(255, 0, 100, 0.2);
+}
+
+.skill-card h3 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  color: var(--txt);
+}
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* background: linear-gradient(90deg, #ff8800b6, #e52e71ab); */
+  border: 1px solid #ddd;
+  color: #292727;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+}
+
+.skill-item .icy {
+  width: 20px;
+  height: 20px;
+}
+
+.skill-item .icy-php{
+   width: 50px;
+   height: 30px;
+}
+
+.skill-item:hover {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 600px) {
+    .skills-flex{
+        flex-wrap: wrap;
+
+        .skill-card{
+          width: 100%;
+          border: none;
+        }
+    }
+}
