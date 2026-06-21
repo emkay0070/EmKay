@@ -63,6 +63,45 @@ body.dark{
         }
     }
 
+    /* experience section */
+    .experience {
+        background: #0f0f0f;
+        color: #fff;
+    }
+
+    .experience .section-header h2 {
+        background: linear-gradient(90deg, #fff, #888);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .experience .section-header p {
+        color: #aaa;
+    }
+
+    .experience .glow-card {
+        background: #111;
+        border: 1px solid #333;
+        box-shadow: none;
+    }
+
+    .experience .glow-card::before {
+        background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+    }
+
+    .experience .glow-card:hover {
+        border-color: #555;
+        box-shadow: none;
+    }
+
+    .experience .experience-icon {
+        color: #fff;
+    }
+
+    .experience .glow-card p {
+        color: #888;
+    }
+
     /* .About */
     .About{
         h2{
